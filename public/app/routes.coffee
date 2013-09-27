@@ -3,7 +3,7 @@ define([
   'app'
 ], (angular, app, controllers) =>
 
-    return app.config(['$routeProvider', ($routeProvider) =>
+    return app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) =>
       $routeProvider.when('/view1',
         templateUrl: 'partials/partial1.html',
         controller: 'MyCtrl1'
@@ -15,5 +15,7 @@ define([
       $routeProvider.otherwise(
         redirectTo: '/view1'
       )
+
+      $locationProvider.html5Mode(true)
     ])
 )
