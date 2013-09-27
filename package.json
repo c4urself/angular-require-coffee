@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "~3.3.5",
     "connect": "~2.8.4",
-    "nodemon": "~0.7.10"
+    "nodemon": "~0.7.10",
+    "grunt": "~0.4.1"
   },
   "devDependencies": {},
   "scripts": {
