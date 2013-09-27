@@ -12,3 +12,13 @@ Based off of:
 - Coffeescript
 - Bower
 - Grunt
+
+## Setup
+
+```sh
+git clone git@github.com:Tubular/angular-ui-investigation.git && cd angular-ui-investigation
+npm install
+bower install
+npm start
+```
+
