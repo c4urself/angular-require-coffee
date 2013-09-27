@@ -8,6 +8,8 @@ app.use(function(req, res, next) {
     if (req.xhr) {
         res.status(404).send('404', {url: req.originalUrl});
     } else {
+        if (req.path.match(/.*\.[ico|js|jpg|jpeg|png]/))
+            console.log('WARNING Path was: ' + req.path + ' sending index.html instead');
         var index = __dirname + '/public/index.html';
         fs.readFile(index, function (err, main) {
             res.contentType('text/html; charset=UTF-8');
