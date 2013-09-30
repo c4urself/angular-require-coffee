@@ -3,7 +3,7 @@
   var _this = this;
 
   define(['angular', '../services'], function(angular, services) {
-    return angular.module('tubular.directives', ['tubular.services']).directive('appVersion', [
+    return angular.module('myApp.directives', ['myApp.services']).directive('appVersion', [
       'version', function(version) {
         return function(scope, elm, attrs) {
           return elm.text(version);

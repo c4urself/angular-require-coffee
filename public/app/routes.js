@@ -2,21 +2,61 @@
 (function() {
   var _this = this;
 
-  define(['angular', 'app'], function(angular, app, controllers) {
+  define(['angular', 'app', 'underscore'], function(angular, app, _) {
     return app.config([
-      '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-        $routeProvider.when('/view1', {
-          templateUrl: 'partials/partial1.html',
-          controller: 'MyCtrl1'
+      '$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
+        return $stateProvider.state('app', {
+          url: '',
+          abstract: true,
+          views: {
+            'nav': {
+              templateUrl: 'partials/nav.html',
+              controller: function($scope) {
+                $scope.navigation = [
+                  {
+                    name: 'Dashboard',
+                    slug: ''
+                  }, {
+                    name: 'Tools',
+                    slug: 'tools'
+                  }, {
+                    name: 'Settings',
+                    slug: 'settings'
+                  }
+                ];
+                return $scope.selectItem = function(selectedItem) {
+                  _($scope.shoppingList).each(function(item) {
+                    return item.selected = false;
+                  });
+                  return selectedItem.selected = true;
+                };
+              }
+            }
+          }
+        }).state('app.home', {
+          url: '/',
+          views: {
+            'content@': {
+              templateUrl: 'partials/home.html',
+              controller: 'MyCtrl1'
+            }
+          }
+        }).state('app.tools', {
+          url: '/tools',
+          views: {
+            'content@': {
+              templateUrl: 'partials/tools.html'
+            }
+          }
+        }).state('app.settings', {
+          url: '/settings',
+          views: {
+            'content@': {
+              templateUrl: 'partials/settings.html'
+            }
+          }
         });
-        $routeProvider.when('/view2', {
-          templateUrl: 'partials/partial2.html',
-          controller: 'MyCtrl2'
-        });
-        $routeProvider.otherwise({
-          redirectTo: '/view1'
-        });
-        return $locationProvider.html5Mode(true);
       }
     ]);
   });

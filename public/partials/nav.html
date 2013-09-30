@@ -1,0 +1,8 @@
+<ul class="menu">
+  <li ng-repeat="item in navigation"
+      ng-class="{active: item.selected}">
+    <a ng-href="/{{item.slug}}"
+       ng-click="selectItem(item)">{{item.name}}</a>
+  </li>
+</ul>
+<div ui-view></div>

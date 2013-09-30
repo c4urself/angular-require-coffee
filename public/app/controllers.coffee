@@ -3,7 +3,7 @@ define([
   'services'
 ], (angular) =>
 
-  return angular.module('tubular.controllers', ['tubular.services'])
+  return angular.module('myApp.controllers', ['myApp.services'])
     .controller('MyCtrl1', ['$scope', 'version', ($scope, version) =>
       console.log('Loaded ctl 1')
       $scope.scopedAppVersion = version

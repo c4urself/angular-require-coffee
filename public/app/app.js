@@ -2,8 +2,18 @@
 (function() {
   var _this = this;
 
-  define(['angular', 'filters/filters', 'services', 'directives/directives', 'controllers', 'angularRoute'], function(angular, filters, services, directives, controllers) {
-    return angular.module('tubular', ['ngRoute', 'tubular.controllers', 'tubular.filters', 'tubular.services', 'tubular.directives']);
+  define(['angular', 'filters/filters', 'services', 'directives/directives', 'controllers', 'angularRoute', 'angularUIRouter'], function(angular, filters, services, directives, controllers) {
+    var app;
+    app = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers', 'ngRoute', 'ui.router']);
+    app.run([
+      '$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+        $state.transitionTo('app.home');
+        return console.log('transitioning state');
+      }
+    ]);
+    return app;
   });
 
 }).call(this);

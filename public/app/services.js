@@ -3,7 +3,7 @@
   var _this = this;
 
   define(['angular'], function(angular) {
-    return angular.module('tubular.services', []).value('version', '0.1');
+    return angular.module('myApp.services', []).value('version', '0.1');
   });
 
 }).call(this);

@@ -4,7 +4,7 @@ define([
 ], (angular, services) =>
 
     return angular
-      .module('tubular.filters', ['tubular.services'])
+      .module('myApp.filters', ['myApp.services'])
       .filter('interpolate',
         ['version', (version)->
           (text)->

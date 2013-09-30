@@ -2,6 +2,6 @@ define([
   'angular'
 ], (angular) =>
 
-    return angular.module('tubular.services', [])
+    return angular.module('myApp.services', [])
       .value('version', '0.1')
 )

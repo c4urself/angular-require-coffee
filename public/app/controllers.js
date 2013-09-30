@@ -3,7 +3,7 @@
   var _this = this;
 
   define(['angular', 'services'], function(angular) {
-    return angular.module('tubular.controllers', ['tubular.services']).controller('MyCtrl1', [
+    return angular.module('myApp.controllers', ['myApp.services']).controller('MyCtrl1', [
       '$scope', 'version', function($scope, version) {
         console.log('Loaded ctl 1');
         return $scope.scopedAppVersion = version;

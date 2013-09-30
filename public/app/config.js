@@ -7,6 +7,8 @@
       angular: '../lib/angular/angular',
       angularRoute: '../lib/angular-route/angular-route',
       angularMocks: '../lib/angular-mocks/angular-mocks',
+      angularUIRouter: '../lib/angular-ui-router/release/angular-ui-router',
+      underscore: '../lib/underscore/underscore',
       text: '../lib/requirejs-text/text'
     },
     shim: {
@@ -14,12 +16,16 @@
         'exports': 'angular'
       },
       'angularRoute': ['angular'],
+      'angularUIRouter': ['angular'],
       'angularMocks': {
         'deps': ['angular'],
         'exports': 'angular.mock'
       },
       'jquery': {
         'exports': 'jQuery'
+      },
+      'underscore': {
+        'exports': '_'
       }
     },
     priority: ['angular']

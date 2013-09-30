@@ -3,7 +3,7 @@
   var _this = this;
 
   define(['angular', 'services'], function(angular, services) {
-    return angular.module('tubular.filters', ['tubular.services']).filter('interpolate', [
+    return angular.module('myApp.filters', ['myApp.services']).filter('interpolate', [
       'version', function(version) {
         return function(text) {
           return String(text).replace(/\%VERSION\%/mg, version);
